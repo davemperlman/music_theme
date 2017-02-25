@@ -1,0 +1,234 @@
+a {
+  text-decoration: none;
+  color: #444; }
+  a:hover {
+    transition: color .5s ease;
+    color: #e07d34;
+    text-decoration: underline; }
+
+body {
+  font-size: 1.1rem;
+  color: #192029;
+  font-family: "Rokkitt";
+  background-color: #fff; }
+
+h2 {
+  padding: 20px;
+  font-size: 1.3rem; }
+
+p {
+  text-indent: 3rem;
+  line-height: 2rem; }
+
+.wp-caption-text {
+  font-size: 0.85rem;
+  text-align: center;
+  text-indent: 0; }
+
+.page-head {
+  width: 100%;
+  background-image: url("http://108.176.232.90/wordpress/wp-content/uploads/2016/11/banner-2.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  height: 100px; }
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff; }
+
+nav {
+  background: linear-gradient(to bottom, #222, #000, #000, #000, #222); }
+  nav ul {
+    width: 90%;
+    margin: 1rem auto;
+    display: table; }
+    nav ul li {
+      display: table-cell;
+      text-align: center;
+      font-size: 1.2rem; }
+      nav ul li a {
+        display: block;
+        padding: 10px;
+        color: #fff; }
+        nav ul li a:hover {
+          text-decoration: none; }
+        nav ul li a:after {
+          display: block;
+          position: relative;
+          bottom: -3px;
+          content: '';
+          border-bottom: 2px solid #fff;
+          transform: scaleX(0);
+          transition: transform 350ms ease-in-out; }
+        nav ul li a:hover:after {
+          transform: scaleX(1); }
+
+#posts {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.post {
+  flex-basis: 25%;
+  flex-grow: 1;
+  flex-shrink: 2;
+  padding: 20px;
+  margin: 5px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px #000;
+  position: relative; }
+  .post img {
+    max-width: 100%; }
+
+.post-date {
+  font-size: 0.7rem; }
+
+.post-title {
+  text-align: center; }
+
+.shows {
+  padding: 20px;
+  background-image: url("http://moistpie.servebeer.com/dave/entertainmentmaine-fix/wp-content/uploads/2017/02/slash_it.png");
+  color: #fff; }
+
+.event {
+  padding: 20px;
+  width: 100%;
+  border-top: 1px solid #fff; }
+  .event td {
+    width: 33%;
+    padding: 25px 10px;
+    text-align: center; }
+
+#instagram {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 5px groove #fff; }
+
+footer {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px; }
+
+.resources {
+  margin-top: 20px;
+  border-right: 1px solid #000;
+  width: 50%;
+  text-align: center; }
+  .resources ul {
+    margin: 0 auto;
+    width: 300px; }
+  .resources a {
+    margin: 10px; }
+
+.subscribe {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  float: right; }
+
+#about {
+  padding: 20px; }
+  #about p {
+    width: 80%;
+    margin: 0 auto; }
+  #about img {
+    width: 100%;
+    margin: 20px auto; }
+
+#contact {
+  padding: 20px;
+  width: 100%;
+  color: #fff;
+  background-image: url("http://108.176.232.90/wordpress/wp-content/uploads/2016/11/slash_it.png"); }
+
+#contact-wrap {
+  width: 400px;
+  margin: 0 auto; }
+
+.content {
+  width: 100%;
+  color: #323;
+  overflow: hidden; }
+  .content img.alignright {
+    float: right;
+    margin: 0 0 1em 1em; }
+  .content img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0; }
+  .content img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .content .alignright {
+    float: right; }
+  .content .alignleft {
+    float: left; }
+  .content .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .content h2 {
+    text-align: center; }
+  .content .blog-post {
+    width: 80%;
+    padding: 20px;
+    margin: 3rem auto; }
+
+@media screen and (max-width: 676px) {
+  .container {
+    width: 100%;
+    overflow: hidden; }
+
+  body {
+    width: 100%; }
+
+  #posts {
+    display: block; }
+
+  .resources {
+    border: none;
+    width: 100%; }
+    .resources h1 {
+      text-align: left;
+      display: inline;
+      width: 90%;
+      float: left; }
+    .resources ul {
+      width: 300px;
+      clear: both; }
+
+  .subscribe {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin-top: 40px;
+    text-align: left;
+    overflow: hidden; }
+
+  .content .music-event-image, .music-event .music-event-image {
+    padding: 10px;
+    width: 100%; }
+    .content .music-event-image img, .music-event .music-event-image img {
+      width: 95%; }
+  .content .music-event-content, .content .blog-post, .music-event .music-event-content, .music-event .blog-post {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0; }
+    .content .music-event-content p, .content .music-event-content ul, .content .blog-post p, .content .blog-post ul, .music-event .music-event-content p, .music-event .music-event-content ul, .music-event .blog-post p, .music-event .blog-post ul {
+      padding: 10px; }
+
+  nav {
+    width: 100%;
+    padding: 0;
+    white-space: nowrap; }
+    nav ul li {
+      margin-bottom: 0;
+      width: 25%; }
+      nav ul li a {
+        padding: 5px 0; } }
+
+/*# sourceMappingURL=main.css.map */

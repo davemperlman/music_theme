@@ -1,0 +1,361 @@
+$colors: (
+	main_text  : #192029,
+	light_text : #fff,
+	dark_text  : #323, 
+	link_text  : #444,
+	link_hover : #e07d34,
+	background : #fff
+	);
+
+$font: (
+	main_size : 1.1rem,
+	h2_size   : 1.3rem,
+	nav_size  : 1.2rem,
+	post_date : .7rem,
+	caption   : .85rem,
+	family    : 'Rokkitt'
+	);
+
+// Global Element Styling
+
+a {
+	text-decoration: none;
+	color: map-get($colors, 'link_text');
+	&:hover {
+		transition: color .5s ease;
+		color: map-get($colors, 'link_hover');
+		text-decoration: underline;
+	}
+}
+
+body {
+	font-size: map_get($font, 'main_size');
+	color: map-get($colors, 'main_text');
+	font-family: map-get($font, 'family');
+	background-color: map-get($colors, 'background');
+}
+
+h2 {
+	padding: 20px;
+	font-size: map-get($font, 'h2_size');
+}
+
+p {
+	text-indent: 3rem;
+	line-height: 2rem;
+}
+
+.wp-caption-text {
+	font-size: map-get($font, 'caption');
+	text-align: center;
+	text-indent: 0;
+}
+
+// Header
+
+.page-head {
+	width: 100%;
+	background-image: url('http://108.176.232.90/wordpress/wp-content/uploads/2016/11/banner-2.jpg');
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	height: 100px;
+}
+
+// Container
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+// Nav Bar
+
+nav {
+	background: linear-gradient(to bottom,#222, #000, #000, #000, #222);
+	ul {
+		width: 90%;
+		margin: 1rem auto;
+		display: table;
+		li {
+			display: table-cell;
+			text-align: center;
+			font-size: map-get($font, 'nav_size');
+			a {
+				display: block;
+				padding: 10px;
+				color: #fff;
+				&:hover {
+					text-decoration: none;
+				}
+				&:after {
+					display: block;
+					position: relative;
+					bottom: -3px;
+					content: '';
+					border-bottom: 2px solid #fff;
+					transform: scaleX(0);
+					transition: transform 350ms ease-in-out;
+				}
+				&:hover:after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+}
+
+// Blog Section
+
+#posts {
+	//padding: 20px;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.post {
+	flex-basis: 25%;
+	flex-grow: 1;
+	flex-shrink: 2;
+	padding: 20px;
+	margin: 5px;
+	background-color: map-get($colors, 'background');
+	box-shadow: 1px 1px 4px #000;
+	position: relative;
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.post-date {
+	font-size: map-get($font, 'post_date');
+}
+
+.post-title {
+	text-align: center;
+}
+
+// Upcoming Shows
+
+.shows {
+	padding: 20px;
+	background-image: url('http://moistpie.servebeer.com/dave/entertainmentmaine-fix/wp-content/uploads/2017/02/slash_it.png');
+	color: map-get($colors, 'light_text');
+}
+
+.event {
+	padding: 20px;
+
+	width: 100%;
+	border-top: 1px solid #fff;
+	td {
+		width: 33%;
+		padding: 25px 10px;
+		text-align: center;
+	}
+}
+
+#instagram {
+	margin-top: 80px;
+	padding-top: 20px;
+	border-top: 5px groove #fff;
+}
+
+// Footer
+
+footer {
+	//margin-top: 20px;
+	width: 100%;
+	overflow: hidden;
+	padding: 20px;
+}
+.fb-like {
+	//float: right;
+	//width: 40%;
+}
+
+.resources {
+	margin-top: 20px;
+	border-right: 1px solid #000;
+	width: 50%;
+	text-align: center;
+	ul {
+		margin: 0 auto;
+		width: 300px;
+	}
+	a {
+		margin: 10px;
+	}
+}
+
+.subscribe {
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	float: right;
+}
+
+// About Page
+
+#about {
+	padding: 20px;
+	p {
+		width: 80%;
+		margin: 0 auto;
+	}
+	img {
+		width: 100%;
+		margin: 20px auto;
+	}
+}
+
+// Contact Page
+
+#contact {
+	padding: 20px;
+	width: 100%;
+	color: map-get($colors, 'light_text');
+	background-image: url('http://108.176.232.90/wordpress/wp-content/uploads/2016/11/slash_it.png');
+}
+
+#contact-wrap {
+	width: 400px;
+	margin: 0 auto;
+}
+
+// // Single Events -- MOVED AWAY FROM NEEDING SINGLE EVENT PAGE, REPLACED WITH SERVICES
+
+//  .music-event {
+// 	width: 100%;
+// 	h2 {
+// 		text-align: center;
+// 	}
+// 	color: map-get($colors, 'light_text');
+// 	background-image: url('http://108.176.232.90/wordpress/wp-content/uploads/2016/11/slash_it.png');
+// 	overflow: hidden;
+// 	.music-event-image {
+// 		width: 45%;
+// 		display: inline-block;
+// 		img {
+// 			width: 100%;
+// 		}
+// 	}
+// 	.music-event-content, .blog-post {
+// 		width: 45%;
+// 		padding: 20px;
+// 		float: right;
+// 		.meta {
+// 			font-size: .8em;
+// 		}
+// 		.description {
+// 			margin-top: 20px;
+// 		}
+// 	}
+// }
+
+// Single Posts
+
+ .content{
+	width: 100%;
+	img.alignright { float: right; margin: 0 0 1em 1em; }
+	img.alignleft { float: left; margin: 0 1em 1em 0; }
+	img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	.alignright { float: right; }
+	.alignleft { float: left; }
+	.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	h2 {
+		text-align: center;
+	}
+	color: map-get($colors, 'dark_text');
+	//background-image: url('http://108.176.232.90/wordpress/wp-content/uploads/2016/11/slash_it.png');
+	overflow: hidden;
+	// .music-event-image {
+	// 	width: 45%;
+	// 	display: inline-block;
+	// 	img {
+	// 		width: 80%;
+	// 		display: block;
+	// 		margin: 0 auto;
+	// 	}
+	// }
+ 	.blog-post {
+		width: 80%;
+		padding: 20px;
+		margin: 3rem auto;
+	}
+}
+
+@media screen and (max-width: 676px) {
+	.container {
+		width: 100%;
+		overflow: hidden;
+	}
+	body {
+		width: 100%;
+	}
+
+	#posts {
+		display: block;
+	}
+
+	.resources {
+		h1 {
+			text-align: left;
+			display: inline;
+			width: 90%;
+			float: left;
+		}
+		border: none;
+		width: 100%;
+		ul {
+			width: 300px;
+			clear: both;
+		}
+	}
+
+	.subscribe {
+		width: 100%;
+		float: none;
+		clear: both;
+		margin-top: 40px;
+		text-align: left;
+		overflow: hidden;
+	}
+	.content, .music-event {
+		.music-event-image {
+			padding: 10px;
+			width: 100%;
+			img {
+				width: 95%;
+			}
+		}
+		.music-event-content, .blog-post {
+			width: 100%;
+			margin: 0 auto;
+			padding: 0;
+			p, ul {
+				padding: 10px;
+			}
+		}
+	}
+
+	nav {
+		width: 100%;
+		padding: 0;
+		white-space: nowrap;
+		ul {
+			li {
+				margin-bottom: 0;
+				width: 25%;
+				a {
+					padding: 5px 0;
+				}
+			}
+		}
+
+	}
+}
