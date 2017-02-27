@@ -12,7 +12,8 @@
                      <?php the_tags(); ?>
                   </section>
                </article>
-               <?php posts_nav_link(); ?>
+              <div class="pagination"><span id="prev"><?php next_post_link('%link', '') ?></span><span id="next"><?php previous_post_link('%link', '') ?></span></div>
+               </div>
          <?php endwhile;?>
       <?php endif;?>
    </section>

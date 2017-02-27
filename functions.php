@@ -16,8 +16,11 @@ function create_post_type() {
 		array(
 			'labels' => array(
 			  'name'          => __( 'Events' ),
-			  'singular_name' => __( 'Event' )
+			  'singular_name' => __( 'Event' ),
+			  'add_new'		  => 'Add New',
+			  'edit_item'     => 'Edit'
 		),
+		'description' => 'Post type for Events',
 		'public'      => true,
 		'has_archive' => true,
 		'taxonomies'    => array('category'),

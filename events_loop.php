@@ -1,7 +1,7 @@
 <?php
 $loop = new WP_Query( array(
 	'post_type'      => 'music_event',
-	'posts_per_page' => '15',
+	'posts_per_page' => '15', 
 	'category_name'  => 'shows',
 	'meta_query'     => array(
 		array(
@@ -15,6 +15,11 @@ $loop = new WP_Query( array(
 	'order'    => 'ASC'
 	)
 );
+
+global $wp_query;
+$temp_wp_query = $wp_query;
+$wp_query = null;
+$wp_query = $loop;
 
 
 
@@ -32,3 +37,4 @@ if($loop->have_posts()) :
 	</a>
 <?php endwhile; ?>
 <?php endif; ?>
+<?php $wp_query = $temp_wp_query ?>

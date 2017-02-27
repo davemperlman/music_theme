@@ -27,6 +27,8 @@ get_header();
 		       <section class="description">
 		       		<p><?php the_content(); ?></p>
 		       		<?php the_tags(); ?>
+		       		<div class="pagination"><span id="next"><?php next_post_link('%link', '') ?></span><span id="prev"><?php previous_post_link('%link', '') ?></span></div>
+					</div>
 		       </section>
 		  	</section>
 		  	
