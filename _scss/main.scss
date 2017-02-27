@@ -122,6 +122,7 @@ nav {
 // Blog Section
 .container {
 	max-width: 80rem;
+	overflow: hidden;
 }
 
 #posts {
@@ -219,13 +220,14 @@ footer {
 // About Page
 
 #about {
-	padding: 20px;
+	//padding: 20px;
 	p {
-		width: 80%;
+		width: 100%;
 		margin: 0 auto;
 	}
 	img {
-		width: 100%;
+		width: 70%;
+		display: block;
 		margin: 20px auto;
 	}
 }
@@ -319,9 +321,9 @@ footer {
 
 //Single Pages
  .content_wrap {
- 	max-width: 800px;
+ 	//max-width: 800px;
  	margin: 0 auto;
- 	padding: 1rem;
+ 	//padding: 1rem;
  	img.alignright { float: right; margin: 0 0 1em 1em; }
 	img.alignleft { float: left; margin: 0 1em 1em 0; }
 	img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
@@ -329,7 +331,8 @@ footer {
 	.alignleft { float: left; }
 	.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 	.wp-caption {
-		display: inline-block !important;
+		//display: inline-block !important;
+		font-style: italic;
 		//overflow: hidden;
 	}
 	p {
@@ -337,16 +340,19 @@ footer {
 	}
  	h2 {
  		margin: 2rem;
+ 		clear: both;
  	}
  	h3 {
- 		margin: 1rem;
+ 		margin: 2rem;
+ 		font-size: 1.5rem;
  		font-weight: bold;
+ 		clear: both;
  	}
  	img {
  		max-width: 100%;
  		height: auto;
  		padding: 1rem;
- 		float: left;
+ 		//float: left;
  	}
  	//overflow: hidden;
  }
