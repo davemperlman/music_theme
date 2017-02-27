@@ -8,7 +8,7 @@
 	<p>
 		If you haven't heard me yet, go ahead and view some of the media posted on this site. Any questions can be directed to my <a href="http://108.176.232.90/wordpress/?page_id=71">contact</a> page.
 	</p>
-	<img src="http://108.176.232.90/wordpress/wp-content/uploads/2016/11/DSC03217.jpg" alt="">
+	<img src="http://www.entertainmentmaine.com/wp-content/uploads/2016/11/DSC03508.jpg" alt="me playing guitar">
 </section>
 	
 
