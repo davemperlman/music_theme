@@ -256,7 +256,8 @@ footer {
     border-top: .1rem solid #000; }
 
   body {
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
 
   #posts {
     display: block; }
