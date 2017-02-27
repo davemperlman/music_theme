@@ -21,12 +21,14 @@ $loop = new WP_Query( array(
 if($loop->have_posts()) :
 	while ( $loop->have_posts() ) :
 		$loop->the_post(); ?>
-	<table class="event">
-		<tr>
-			<td><?php echo date('jS F', strtotime(get_post_meta(get_the_ID(), 'date')[0])); ?></td>
-			<td><?php the_title(); ?></td>
-			<td><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></td>
-		</tr>
-	</table>
+	<a id="event-link" href="<?php the_permalink(); ?>">
+		<table class="event">
+			<tr>
+				<td><?php echo date('jS F', strtotime(get_post_meta(get_the_ID(), 'date')[0])); ?></td>
+				<td><?php the_title(); ?></td>
+				<td><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></td>
+			</tr>
+		</table>
+	</a>
 <?php endwhile; ?>
 <?php endif; ?>

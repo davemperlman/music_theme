@@ -167,13 +167,23 @@ nav {
 
 .event {
 	padding: 20px;
-
 	width: 100%;
 	border-top: 1px solid #fff;
 	td {
 		width: 33%;
 		padding: 25px 10px;
 		text-align: center;
+	}
+}
+
+#event-link {
+	color: #fff;
+	cursor: pointer;
+	background-color: rgba(225,225,225, 0);
+	display: block;
+	transition: all .5s;
+	&:hover, &:active {
+		background-color: rgba(225,225,225,.1);
 	}
 }
 
@@ -307,8 +317,8 @@ footer {
 	// 	}
 	// }
  	.blog-post {
-		width: 80%;
-		padding: 20px;
+		width: 100%;
+		//padding: 20px;
 		margin: 3rem auto;
 	}
 
@@ -355,6 +365,19 @@ footer {
  		//float: left;
  	}
  	//overflow: hidden;
+ }
+
+ .meta {
+
+ 	li {
+ 		//display: table-cell;
+ 		margin: 2rem;
+ 		display: block;
+ 		font-size: 1.2rem;
+ 		span {
+ 			text-decoration: underline;
+ 		}
+ 	}
  }
 
 @media screen and (max-width: 676px) {

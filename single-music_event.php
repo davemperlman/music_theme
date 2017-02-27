@@ -9,13 +9,19 @@ get_header();
 	       	<h2><?php the_title(); ?></h2> 
 	       	<section class="music-event-content">
 		       <ul class="meta">
-			       	<li>
-			       		Date: <?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'date' )[0])); ?>
+			       	<li id="event-date">
+			       		Date: <span><?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'date' )[0])); ?></span>
 			       	</li>
-			       	<li>Time: <?php echo get_post_meta( get_the_ID(), 'time')[0]; ?></li>
-			       	<li>Location: <?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></li>
+			       	<li id="event-time">
+			       		Time: <span><?php echo get_post_meta( get_the_ID(), 'time')[0]; ?></span>
+			       		</li>
+			       	<li id="event-location">
+			       		Location: <span><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></span>
+			       	</li>
 			       	<?php if ( get_post_meta( get_the_ID(), 'Admittance')[0] ): ?>
-			       		<li>Admittance: <?php echo get_post_meta( get_the_ID(), 'Admittance')[0]; ?></li>
+			       		<li id="event-admittance">
+			       			Admittance: <span><?php echo get_post_meta( get_the_ID(), 'Admittance')[0]; ?></span>
+			       		</li>
 			       	<?php endif ?>	
 		       </ul>
 		       <section class="description">
