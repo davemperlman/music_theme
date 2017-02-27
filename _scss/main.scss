@@ -236,7 +236,7 @@ footer {
 	padding: 20px;
 	width: 100%;
 	color: map-get($colors, 'light_text');
-	background-image: url('http://108.176.232.90/wordpress/wp-content/uploads/2016/11/slash_it.png');
+	background-image: url('http://www.entertainmentmaine.com/wp-content/uploads/2016/11/slash_it.png');
 }
 
 #contact-wrap {
@@ -286,6 +286,9 @@ footer {
 	.alignright { float: right; }
 	.alignleft { float: left; }
 	.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	.wp-caption {
+		display: inline-block !important;
+	}
 	h2 {
 		text-align: center;
 	}
@@ -313,6 +316,40 @@ footer {
 		margin: 0 auto;
 	}
 }
+
+//Single Pages
+ .content_wrap {
+ 	max-width: 800px;
+ 	margin: 0 auto;
+ 	padding: 1rem;
+ 	img.alignright { float: right; margin: 0 0 1em 1em; }
+	img.alignleft { float: left; margin: 0 1em 1em 0; }
+	img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	.alignright { float: right; }
+	.alignleft { float: left; }
+	.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	.wp-caption {
+		display: inline-block !important;
+		//overflow: hidden;
+	}
+	p {
+		margin: 1rem auto;
+	}
+ 	h2 {
+ 		margin: 2rem;
+ 	}
+ 	h3 {
+ 		margin: 1rem;
+ 		font-weight: bold;
+ 	}
+ 	img {
+ 		max-width: 100%;
+ 		height: auto;
+ 		padding: 1rem;
+ 		float: left;
+ 	}
+ 	//overflow: hidden;
+ }
 
 @media screen and (max-width: 676px) {
 	.container {
