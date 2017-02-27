@@ -76,8 +76,7 @@ nav {
           transform: scaleX(1); }
 
 .container {
-  max-width: 80rem;
-  overflow: hidden; }
+  max-width: 80rem; }
 
 #posts {
   display: inline-flex;
@@ -154,7 +153,6 @@ footer {
   margin: 20px auto; }
 
 #contact {
-  padding: 20px;
   width: 100%;
   color: #fff;
   background-image: url("http://www.entertainmentmaine.com/wp-content/uploads/2016/11/slash_it.png"); }
