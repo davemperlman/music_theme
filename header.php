@@ -19,6 +19,9 @@
       </header>
       <div class="container">
          <nav>
+         <!-- mobile menu -->
+            <input type="checkbox" id="menu-box">
+            <label id="hamburger" for="menu-box">&#9776</label>
             <?php wp_nav_menu(); ?>
          </nav>
          <?php if( is_front_page() ): ?>

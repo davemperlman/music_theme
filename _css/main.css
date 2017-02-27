@@ -25,24 +25,34 @@ p {
   text-align: center;
   text-indent: 0; }
 
+#hamburger, #menu-box {
+  display: none; }
+
 .page-head {
   width: 100%;
-  background-image: url("http://108.176.232.90/wordpress/wp-content/uploads/2016/11/banner-2.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-color: #fff;
+  min-width: 600px;
+  max-width: 1800px;
+  margin: 0 auto;
+  background: url("http://www.entertainmentmaine.com/wp-content/uploads/2017/02/DSC03365.jpg") no-repeat center center;
+  background-size: 100%;
   height: 100px; }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  background-color: #fff; }
+  background-color: #fff;
+  position: relative; }
+
+.fb_iframe_widget {
+  position: absolute !important;
+  right: 0;
+  top: .5rem; }
 
 nav {
   background: linear-gradient(to bottom, #222, #000, #000, #000, #222); }
   nav ul {
     width: 90%;
-    margin: 1rem auto;
+    margin: 0 auto;
     display: table; }
     nav ul li {
       display: table-cell;
@@ -64,6 +74,9 @@ nav {
           transition: transform 350ms ease-in-out; }
         nav ul li a:hover:after {
           transform: scaleX(1); }
+
+.container {
+  max-width: 80rem; }
 
 #posts {
   display: inline-flex;
@@ -90,6 +103,7 @@ nav {
   text-align: center; }
 
 .shows {
+  position: relative;
   padding: 20px;
   background-image: url("http://moistpie.servebeer.com/dave/entertainmentmaine-fix/wp-content/uploads/2017/02/slash_it.png");
   color: #fff; }
@@ -151,6 +165,8 @@ footer {
 
 .content {
   width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
   color: #323;
   overflow: hidden; }
   .content img.alignright {
@@ -177,11 +193,15 @@ footer {
     width: 80%;
     padding: 20px;
     margin: 3rem auto; }
+  .content .music-event-image img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; }
 
 @media screen and (max-width: 676px) {
   .container {
     width: 100%;
-    overflow: hidden; }
+    border-top: .1rem solid #000; }
 
   body {
     width: 100%; }
@@ -200,6 +220,9 @@ footer {
     .resources ul {
       width: 300px;
       clear: both; }
+
+  .fb-like.fb_iframe_widget {
+    display: none !important; }
 
   .subscribe {
     width: 100%;
@@ -224,11 +247,49 @@ footer {
   nav {
     width: 100%;
     padding: 0;
-    white-space: nowrap; }
-    nav ul li {
-      margin-bottom: 0;
-      width: 25%; }
-      nav ul li a {
-        padding: 5px 0; } }
+    white-space: nowrap;
+    position: relative; }
+    nav #hamburger {
+      position: absolute;
+      display: block;
+      left: .5rem;
+      top: -2rem;
+      z-index: 100;
+      font-size: 2rem; }
+    nav #menu-box {
+      display: none; }
+    nav .menu-nav-container {
+      height: 0;
+      overflow: hidden;
+      transition: all .5s;
+      position: absolute;
+      z-index: 100;
+      width: 0rem;
+      border-bottom-right-radius: 100%;
+      background-color: #111;
+      opacity: .9;
+      box-shadow: .7rem .7rem 5rem #111; }
+      nav .menu-nav-container ul {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        nav .menu-nav-container ul li {
+          display: block;
+          padding: .5rem 2rem;
+          font-size: 1.4rem;
+          width: 50%; }
+          nav .menu-nav-container ul li a {
+            padding: 5px 0;
+            color: #111;
+            transition: all .6s; }
+    nav #menu-box:checked ~ .menu-nav-container {
+      padding-top: 80%;
+      width: 80%;
+      left: 0rem; }
+      nav #menu-box:checked ~ .menu-nav-container a {
+        color: #fff; }
+    nav #menu-box:checked + #hamburger {
+      color: #fff; } }
 
 /*# sourceMappingURL=main.css.map */
