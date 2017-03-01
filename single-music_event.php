@@ -8,6 +8,7 @@ get_header();
 	    	<section class="music-event-image"><?php the_post_thumbnail(); ?></section> 
 	       	<h2><?php the_title(); ?></h2> 
 	       	<section class="music-event-content">
+		       <section class="description">
 		       <ul class="meta">
 			       	<li id="event-date">
 			       		Date: <span><?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'date' )[0])); ?></span>
@@ -24,12 +25,11 @@ get_header();
 			       		</li>
 			       	<?php endif ?>	
 		       </ul>
-		       <section class="description">
 		       		<p><?php the_content(); ?></p>
 		       		<?php the_tags(); ?>
-		       		<div class="pagination"><span id="next"><?php next_post_link('%link', '') ?></span><span id="prev"><?php previous_post_link('%link', '') ?></span></div>
-					</div>
 		       </section>
+		       <div class="pagination"><span id="next"><?php next_post_link('%link', '') ?></span><span id="prev"><?php previous_post_link('%link', '') ?></span></div>
+					</div>
 		  	</section>
 		  	
 	    <?php endwhile;?>
