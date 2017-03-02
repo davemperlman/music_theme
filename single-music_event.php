@@ -11,13 +11,13 @@ get_header();
 		       <section class="description">
 		       <ul class="meta">
 			       	<li id="event-date">
-			       		Date: <span><?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'date' )[0])); ?></span>
+			       		Date <span><?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'date' )[0])); ?></span>
 			       	</li>
 			       	<li id="event-time">
-			       		Time: <span><?php echo get_post_meta( get_the_ID(), 'time')[0]; ?></span>
+			       		Time <span><?php echo get_post_meta( get_the_ID(), 'time')[0]; ?></span>
 			       		</li>
 			       	<li id="event-location">
-			       		Location: <span><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></span>
+			       		Location <span><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></span>
 			       	</li>
 			       	<?php if ( get_post_meta( get_the_ID(), 'Admittance')[0] ): ?>
 			       		<li id="event-admittance">

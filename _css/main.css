@@ -17,8 +17,8 @@ h2 {
   font-size: 1.3rem; }
 
 p {
-  text-indent: 3rem;
-  line-height: 2rem; }
+  text-indent: 1rem;
+  line-height: 1.5rem; }
 
 .pagination {
   width: 100%;
@@ -70,6 +70,10 @@ p {
   background: url("http://www.entertainmentmaine.com/wp-content/uploads/2017/02/Untitled-1-1.png") no-repeat center center;
   background-size: 100%;
   height: 100px; }
+  .page-head #home-link {
+    display: block;
+    width: 100%;
+    height: 100%; }
 
 .container {
   width: 100%;
@@ -231,7 +235,7 @@ footer {
   .content .wp-caption {
     display: inline-block !important; }
   .content h2 {
-    text-align: center; }
+    text-align: left; }
   .content .blog-post {
     width: 100%;
     margin: 3rem auto; }
@@ -288,19 +292,17 @@ footer {
     padding: 1rem; }
 
 .meta {
-  width: 45%;
-  max-width: 300px;
-  opacity: .8;
-  margin: 0 1rem;
-  float: left;
-  border-bottom: .1rem dashed #fff;
-  border-right: .1rem dashed #fff; }
+  display: block; }
   .meta li {
+    display: inline-block;
     margin-bottom: 1rem;
-    display: block;
-    font-size: 1.2rem; }
+    margin-left: .8rem;
+    font-size: 1.2rem;
+    font-style: italic; }
     .meta li span {
-      color: #a4f; }
+      color: #4af;
+      margin-left: .2rem;
+      font-style: normal; }
 
 @media screen and (max-width: 676px) {
   .container {
@@ -321,12 +323,16 @@ footer {
     width: 100%; }
     .resources h1 {
       display: block;
-      margin: 0 auto;
+      margin: 1rem auto;
       width: 90%;
       font-size: 1.5rem; }
     .resources ul {
-      width: 300px;
+      width: 100%;
+      display: table;
       clear: both; }
+      .resources ul li {
+        display: table-cell;
+        float: none; }
 
   .fb-like.fb_iframe_widget {
     display: none !important; }
@@ -349,6 +355,23 @@ footer {
     padding: 0; }
     .content .music-event-content p, .content .music-event-content ul, .content .blog-post p, .content .blog-post ul, .music-event .music-event-content p, .music-event .music-event-content ul, .music-event .blog-post p, .music-event .blog-post ul {
       padding: 10px; }
+    .content .music-event-content img, .content .blog-post img, .music-event .music-event-content img, .music-event .blog-post img {
+      max-width: 100%;
+      height: auto; }
+
+  .meta {
+    float: none;
+    border-bottom: .2rem dashed #fff; }
+    .meta li {
+      margin-bottom: 1rem;
+      margin-left: 0;
+      text-align: center;
+      display: block;
+      font-size: 1.2rem; }
+      .meta li span {
+        color: #4af;
+        display: block;
+        font-size: 1.5rem; }
 
   nav {
     width: 100%;
@@ -361,7 +384,8 @@ footer {
       left: .5rem;
       top: -2rem;
       z-index: 100;
-      font-size: 2rem; }
+      font-size: 2rem;
+      cursor: pointer; }
     nav #menu-box {
       display: none; }
     nav .menu-nav-container {

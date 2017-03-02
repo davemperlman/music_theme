@@ -16,6 +16,7 @@
          }(document, 'script', 'facebook-jssdk'));
       </script>
 		<header class="page-head">
+      <a id='home-link' href="http://www.entertainmentmaine.com"></a>
       </header>
       <div class="container">
          <nav>
