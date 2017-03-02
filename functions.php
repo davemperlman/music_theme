@@ -79,6 +79,21 @@ function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 }
 
 
+function filter_ptags_on_images($content)
+{
+    // do a regular expression replace...
+    // find all p tags that have just
+    // <p>maybe some white space<img all stuff up to /> then maybe whitespace </p>
+    // replace it with just the image tag...
+    return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
+}
+
+// we want it to be run after the autop stuff... 10 is default.
+add_filter('the_content', 'filter_ptags_on_images');
+
+
+
+
 // // Save the Metabox Data
 
 // function wpt_save_events_meta($post_id, $post) {

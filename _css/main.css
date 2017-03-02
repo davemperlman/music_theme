@@ -14,7 +14,7 @@ body {
 
 h2 {
   padding: 20px;
-  font-size: 1.3rem; }
+  font-size: 1.5rem; }
 
 p {
   text-indent: 1rem;
@@ -241,7 +241,7 @@ footer {
     margin: 3rem auto; }
 
 .music-event-image img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   display: block;
   margin: 0 auto; }
@@ -257,11 +257,10 @@ footer {
 .content_wrap {
   margin: 0 auto; }
   .content_wrap img.alignright {
-    float: right;
-    margin: 0 0 1em 1em; }
+    float: right; }
   .content_wrap img.alignleft {
     float: left;
-    margin: 0 1em 1em 0; }
+    margin: .5rem 1em 1em 1rem; }
   .content_wrap img.aligncenter {
     display: block;
     margin-left: auto;
@@ -275,21 +274,32 @@ footer {
     margin-left: auto;
     margin-right: auto; }
   .content_wrap .wp-caption {
-    font-style: italic; }
+    display: inline-block !important;
+    font-style: italic;
+    width: 100%;
+    height: auto;
+    margin: .5rem 1rem;
+    padding: .5rem 0rem 0 .5rem;
+    background-color: #eee; }
+    .content_wrap .wp-caption img {
+      padding: 0;
+      margin: 0; }
+    .content_wrap .wp-caption p {
+      margin-left: -.5rem; }
   .content_wrap p {
-    margin: 1rem auto; }
+    margin-top: .5rem; }
   .content_wrap h2 {
     margin: 2rem;
     clear: both; }
   .content_wrap h3 {
     margin: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     clear: both; }
   .content_wrap img {
-    max-width: 100%;
-    height: auto;
-    padding: 1rem; }
+    padding: .5rem;
+    background-color: #eee;
+    margin: .5rem 1rem; }
 
 .meta {
   display: block; }
@@ -348,7 +358,7 @@ footer {
   .content .music-event-image, .music-event .music-event-image {
     width: 100%; }
     .content .music-event-image img, .music-event .music-event-image img {
-      width: 100%; }
+      max-width: 100%; }
   .content .music-event-content, .content .blog-post, .music-event .music-event-content, .music-event .blog-post {
     width: 100%;
     margin: 0 auto;
@@ -372,6 +382,31 @@ footer {
         color: #4af;
         display: block;
         font-size: 1.5rem; }
+
+  .content_wrap {
+    position: relative;
+    padding: .5rem; }
+    .content_wrap p img {
+      position: relative;
+      width: 100%; }
+    .content_wrap .wp-caption {
+      width: 100% !important;
+      padding: 0;
+      margin: 1rem 0; }
+      .content_wrap .wp-caption p {
+        padding: 0; }
+      .content_wrap .wp-caption img {
+        width: 100% !important;
+        height: auto;
+        margin: 0; }
+    .content_wrap img.alignleft, .content_wrap img.alignright {
+      margin: 1rem 0; }
+    .content_wrap img {
+      width: 100%;
+      height: auto;
+      float: none;
+      margin: 0;
+      padding: 0; }
 
   nav {
     width: 100%;
