@@ -445,13 +445,13 @@ footer {
 		}
 		border: none;
 		width: 100%;
-		ul {
+		.mg-wpsi {
 			width: 100%;
 			display: table;
 			clear: both;
 			li {
 				display: table-cell;
-				float: none !important;
+				float: none;
 			}
 		}
 	}
