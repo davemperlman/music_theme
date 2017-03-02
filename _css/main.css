@@ -332,7 +332,7 @@ footer {
       clear: both; }
       .resources .mg-wpsi li {
         display: table-cell;
-        float: none; }
+        float: none !important; }
 
   .fb-like.fb_iframe_widget {
     display: none !important; }
