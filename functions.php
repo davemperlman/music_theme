@@ -83,7 +83,7 @@ add_filter('the_content', 'filter_ptags_on_images');
 		global $post;
 		$tmp_post = $post;
 
-		$loop = new WP_Query( array('post_type' => 'venue') );
+		$loop = new WP_Query( array('post_type' => 'venue', 'posts_per_page' => -1) );
 		wp_nonce_field(basename(__FILE__), 'meta_box_nonce');
 		?>
 		<select name="meta-box-venue" id="meta-box-venue" value='<?php echo get_post_meta($object->ID, 'meta-box-venue', true); ?>'>
