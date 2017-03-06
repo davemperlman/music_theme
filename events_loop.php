@@ -28,12 +28,20 @@ $wp_query = $loop;
 if($loop->have_posts()) :
 	while ( $loop->have_posts() ) :
 		$loop->the_post(); ?>
+	<?php $venueId = get_post_meta( get_the_ID(), 'meta-box-venue')[0]; ?>
 		<a id="event-link" href="<?php the_permalink(); ?>">
 			<table class="event">
 				<tr>
 					<td><?php echo date('jS F', strtotime(get_post_meta(get_the_ID(), 'date')[0])); ?></td>
 					<td><?php the_title(); ?></td>
-					<td><?php echo get_post_meta(get_the_ID(), 'location')[0]; ?></td>
+					<!-- <td><?php //echo get_post_meta(get_the_ID(), 'location')[0]; ?></td> -->
+					<?php $inner_loop = new WP_Query( array( 'p' => $venueId, 'post_type' => 'venue' ) ); ?>
+						<?php if ($inner_loop->have_posts() ): ?>
+							<?php while( $inner_loop->have_posts() ) : $inner_loop->the_post(); ?>	
+								<td><?php echo get_post_meta( get_the_ID(), 'location' )[0]; ?></td>
+							<?php endwhile; ?>
+						<?php endif; ?>
+					<?php wp_reset_postdata(); ?>
 				</tr>
 			</table>
 		</a>

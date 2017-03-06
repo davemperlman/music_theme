@@ -43,6 +43,7 @@ h2 {
 p {
 	text-indent: 1rem;
 	line-height: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .pagination {
@@ -341,6 +342,17 @@ footer {
 	}
 }
 
+#event-description {
+	position: relative;
+	&::after {
+		content: '';
+		display: block;
+		width: 70%;
+		margin: 0 auto;
+		border-bottom: .2rem dashed #fff;
+	}
+}
+
 .music-event-image img{
 		max-width: 50%;
 		height: auto;
@@ -410,23 +422,30 @@ footer {
  }
 
  .meta {
-	display: block;
+	float: none;
+	border-bottom: .2rem dashed #fff;
  	li {
- 		display: inline-block;
+ 		//display: table-cell;
  		margin-bottom: 1rem;
- 		margin-left: .8rem;
+ 		margin-left: 0;
+ 		text-align: center;
+ 		display: block;
  		font-size: 1.2rem;
- 		font-style: italic;
+ 		//text-align: center;
  		span {
  			//text-decoration: underline;
  			color: #4af;
  			//width: 50%;
- 			//display: table-cell;
- 			margin-left: .2rem;
- 			font-style: normal;
+ 			display: block;
+ 			//margin-left: 1rem;
+ 			font-size: 1.5rem;
 
  		}
  	}
+ }
+
+ .venue-meta.meta {
+ 	border-bottom: none;
  }
 
 @media screen and (max-width: 676px) {

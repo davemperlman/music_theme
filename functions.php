@@ -56,21 +56,6 @@ function create_post_types() {
 
 add_action( 'init', 'create_post_types' );
 
-function add_venue_metaboxes() {
-	add_meta_box('event_venue', 'Venue', 'event_venue_post', 'Events', 'side', 'default');
-}
-
-function event_venue_post() {
-	global $post;
-	echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' .
-    wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-    $venue = get_post_meta($post->ID, '_Venue', true);
-
-    echo '<input type="text" name="_Venue" value="' . $venue  . '" class="widefat" />';
-}
-
-//add_action( 'init', 'create_venue' );
-
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
@@ -90,6 +75,60 @@ function filter_ptags_on_images($content)
 
 // we want it to be run after the autop stuff... 10 is default.
 add_filter('the_content', 'filter_ptags_on_images');
+
+
+// Meta Box Stuff
+
+	function custom_meta_box_markup($object) {
+		global $post;
+		$tmp_post = $post;
+
+		$loop = new WP_Query( array('post_type' => 'venue') );
+		wp_nonce_field(basename(__FILE__), 'meta_box_nonce');
+		?>
+		<select name="meta-box-venue" id="meta-box-venue" value='<?php echo get_post_meta($object->ID, 'meta-box-venue', true); ?>'>
+			<?php if ( $loop->have_posts() ) : ?>
+				<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+					<option value="<?php echo get_the_ID(); ?>"><?php the_title(); ?></option>
+				<?php endwhile; ?>
+			<?php endif ?>
+		</select>
+	<?php $post = $tmp_post;
+	 }
+
+	function add_custom_meta_box() {
+		add_meta_box('venue_meta_box', 'Venue', 'custom_meta_box_markup', 'music_event', 'side', 'low');
+	}
+
+	add_action('add_meta_boxes', 'add_custom_meta_box');
+
+	function save_venue_meta_box($post_id, $post, $update) {
+		if (!isset($_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], basename(__FILE__))) {
+			return $post_id;
+		}
+
+		if (!current_user_can('edit_post', $post_id)) {
+			return $post_id;
+		}
+
+		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+			return $post_id;
+		}
+
+		$slug = 'music_event';
+		if ($slug != $post->post_type) {
+			return $post_id;
+		}
+
+		$meta_box_venue_value = '';
+		if (isset($_POST['meta-box-venue'])) {
+			$meta_box_venue_value = $_POST['meta-box-venue'];
+		}
+
+		update_post_meta($post_id, 'meta-box-venue', $meta_box_venue_value);
+	}
+
+	add_action('save_post', 'save_venue_meta_box', 10, 3);
 
 
 

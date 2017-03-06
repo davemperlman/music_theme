@@ -18,7 +18,8 @@ h2 {
 
 p {
   text-indent: 1rem;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  margin-bottom: 1rem; }
 
 .pagination {
   width: 100%;
@@ -240,6 +241,15 @@ footer {
     width: 100%;
     margin: 3rem auto; }
 
+#event-description {
+  position: relative; }
+  #event-description::after {
+    content: '';
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: .2rem dashed #fff; }
+
 .music-event-image img {
   max-width: 50%;
   height: auto;
@@ -302,17 +312,21 @@ footer {
     margin: .5rem 1rem; }
 
 .meta {
-  display: block; }
+  float: none;
+  border-bottom: .2rem dashed #fff; }
   .meta li {
-    display: inline-block;
     margin-bottom: 1rem;
-    margin-left: .8rem;
-    font-size: 1.2rem;
-    font-style: italic; }
+    margin-left: 0;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem; }
     .meta li span {
       color: #4af;
-      margin-left: .2rem;
-      font-style: normal; }
+      display: block;
+      font-size: 1.5rem; }
+
+.venue-meta.meta {
+  border-bottom: none; }
 
 @media screen and (max-width: 676px) {
   .container {
