@@ -401,6 +401,9 @@ footer {
         display: block;
         font-size: 1.5rem; }
 
+  #contact-wrap {
+    width: 100%; }
+
   .content_wrap {
     position: relative;
     padding: .5rem;
