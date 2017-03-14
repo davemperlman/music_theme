@@ -295,6 +295,10 @@ footer {
 	width: 100%;
 	color: map-get($colors, 'light_text');
 	background-image: url('http://www.entertainmentmaine.com/wp-content/uploads/2016/11/slash_it.png');
+	input, textarea {
+		box-sizing: border-box;
+		width: 100%;
+	}
 }
 
 #contact-wrap {
@@ -458,7 +462,7 @@ footer {
 		width: 100%;
 	}
 	.page-head {
-		//background-size: cover;
+		height: 80px;
 		min-width: 0;
 	}
 
@@ -547,6 +551,7 @@ footer {
 	.content_wrap {
 		position: relative;
 		padding: .5rem;
+		width: 100%;
 		p {
 			//padding: .5rem;
 			img {
