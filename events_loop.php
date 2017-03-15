@@ -7,13 +7,13 @@ $loop = new WP_Query( array(
 	'paged'			 => $paged,
 	'meta_query'     => array(
 		array(
-			'key'       => 'date',
-			'value'     => date('Ymd'),
+			'key'       => 'event-date',
+			'value'     => date('Y-m-d'),
 			'compare'   => '>=',
 		)
 	),
 	'orderby'  => 'meta_value',
-	'meta_key' => 'date',
+	'meta_key' => 'event-date',
 	'order'    => 'ASC'
 	)
 );
@@ -32,7 +32,7 @@ if($loop->have_posts()) :
 		<a id="event-link" href="<?php the_permalink(); ?>">
 			<table class="event">
 				<tr>
-					<td><?php echo date('jS F', strtotime(get_post_meta(get_the_ID(), 'date')[0])); ?></td>
+					<td><?php echo date('jS F', strtotime(get_post_meta(get_the_ID(), 'event-date')[0])); ?></td>
 					<td><?php the_title(); ?></td>
 					<!-- <td><?php //echo get_post_meta(get_the_ID(), 'location')[0]; ?></td> -->
 					<?php $inner_loop = new WP_Query( array( 'p' => $venueId, 'post_type' => 'venue' ) ); ?>
