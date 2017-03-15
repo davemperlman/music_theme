@@ -46,6 +46,15 @@ p {
 	margin-bottom: 1rem;
 }
 
+#poststuff{
+	.inside {
+		background-color: #000;
+		input[type=radio] {
+			display: block !important;
+		}
+	}
+}
+
 .pagination {
 	width: 100%;
 	max-width: 800px;

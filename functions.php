@@ -97,9 +97,14 @@ add_filter('the_content', 'filter_ptags_on_images');
 	 function date_meta_box_markup($object) {
 	 	$previous_date_value = get_post_meta($object->ID, 'event-date', true);
 	 	$previous_time_value = get_post_meta($object->ID, 'event-time', true);
+	 	$previous_gig_value	 = get_post_meta($object->ID, 'gig-type', true);
+
 	 	wp_nonce_field(basename(__FILE__), 'meta_box_nonce');
 	 	echo '<input name="event-date" id="event-date-input" value="' . $previous_date_value . '" type="date" data-date-inline-picker="true" />';
 	 	echo '<input type="text" name="event-time" id="event-time-input" value="' . $previous_time_value . '">';
+	 	echo "<input style='display: block' type='radio' name='gig-type' value='solo'". (($previous_gig_value == 'solo') ? 'checked="checked"' : '') ."> Solo";
+	 	echo "<input style='display: block' type='radio' name='gig-type' value='band'".(($previous_gig_value == 'band') ? 'checked="checked"' : '')."> Band";
+	 	echo "<input style='display: block' type='radio' name='gig-type' value='custom'".(($previous_gig_value == 'custom') ? 'checked="checked"' : '')."> Custom";
 	 }
 
 	function add_custom_meta_box() {
@@ -165,10 +170,16 @@ add_filter('the_content', 'filter_ptags_on_images');
 			$meta_box_time_value = $_POST['event-time'];
 		}
 		update_post_meta($post_id, 'event-time', $meta_box_time_value);
-	}
 
+		$meta_box_gig_value = '';
+		if (isset($_POST['gig-type'])) {
+			$meta_box_gig_value = $_POST['gig-type'];
+		}
+		update_post_meta($post_id, 'gig-type', $meta_box_gig_value);
+	}
 	add_action('save_post', 'save_venue_meta_box', 10, 3);
 	add_action('save_post', 'save_date_meta_box', 10, 3);
+
 
 
 

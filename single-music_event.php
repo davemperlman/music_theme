@@ -23,8 +23,13 @@ get_header();
 			<?php endwhile; ?>
  	<?php endif ?>
  	<?php wp_reset_postdata(); ?>
- 					
- 						<?php the_content(); ?>
+ 						<?php if ( get_post_meta( get_the_ID(), 'gig-type')[0] == 'solo'): ?>
+ 							<p>Dave Perlman performing as a solo acoustic act, performing</p>
+ 						<?php elseif ( get_post_meta( get_the_ID(), 'gig-type')[0] == 'band'): ?>
+ 							<p>Dave perlman playing with a band</p>
+ 						<?php elseif ( get_post_meta( get_the_ID(), 'gig-type')[0] == 'custom'): ?>
+ 							<?php the_content(); ?>
+ 						<?php endif ?>
  					<ul class="meta">
 				       	<li id="event-date">
 				       		Date <span><?php echo date('D M d, Y',strtotime(get_post_meta( get_the_ID(), 'event-date' )[0])); ?></span>

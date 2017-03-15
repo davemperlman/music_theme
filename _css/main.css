@@ -21,6 +21,11 @@ p {
   line-height: 1.5rem;
   margin-bottom: 1rem; }
 
+#poststuff .inside {
+  background-color: #000; }
+  #poststuff .inside input[type=radio] {
+    display: block !important; }
+
 .pagination {
   width: 100%;
   max-width: 800px;
