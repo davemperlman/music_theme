@@ -146,6 +146,35 @@ nav {
 .post-title {
   text-align: center; }
 
+#amount {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  padding-right: .1rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  transition: all .5s; }
+  #amount::after {
+    transition: all .5s;
+    content: '';
+    width: 1.4rem;
+    height: 1.4rem;
+    border: .1rem dashed #fff;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: .23rem;
+    border-radius: 100%; }
+  #amount:hover {
+    color: #8f8; }
+    #amount:hover::after {
+      transform: scale(1.4) rotate(360deg);
+      border-color: #e07d34; }
+
 .shows {
   position: relative;
   padding: 20px;

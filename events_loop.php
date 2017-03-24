@@ -2,7 +2,7 @@
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 $loop = new WP_Query( array(
 	'post_type'      => 'music_event',
-	'posts_per_page' => '15', 
+	'posts_per_page' => isset($_GET['more']) ? '-1' : '1', 
 	'category_name'  => 'shows',
 	'paged'			 => $paged,
 	'meta_query'     => array(
