@@ -181,23 +181,19 @@ nav {
 }
 
 #posts {
-	//padding: 20px;
-	display: inline-flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
+	column-count: 3;
+	column-gap: 0;
+	position: relative;
 }
 
 .post {
-	flex-basis: 25%;
-	flex-grow: 1;
-	flex-shrink: 2;
+	break-inside: avoid;
 	padding: 20px;
 	margin: 5px;
 	background-color: map-get($colors, 'background');
 	box-shadow: 1px 1px 4px #000;
+	display: inline-block;
 	position: relative;
-
 	img {
 		max-width: 100%;
 	}
