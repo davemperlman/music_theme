@@ -379,6 +379,9 @@ footer {
     display: block;
     column-count: 1; }
 
+  .post {
+    display: block; }
+
   .resources {
     border: none;
     width: 100%; }
