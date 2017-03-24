@@ -164,7 +164,7 @@ nav {
     border: .1rem dashed #fff;
     box-sizing: border-box;
     position: absolute;
-    left: 0;
+    left: .01rem;
     top: .23rem;
     border-radius: 100%; }
   #amount:hover {
@@ -376,7 +376,8 @@ footer {
     min-width: 0; }
 
   #posts {
-    display: block; }
+    display: block;
+    column-count: 1; }
 
   .resources {
     border: none;
